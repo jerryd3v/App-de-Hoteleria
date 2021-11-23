@@ -1,0 +1,24 @@
+
+<div class="caja">
+                <span class="circulo"></span>
+                <h1>AB2</h1>
+                <div class="personas">
+                    <div class="visitantes">
+                        <h3>Visitantes</h3>
+                        <p>Jose Perez</p>
+                        <p>Geminis de Perez</p>
+                        <p>Carlos Perez</p>
+                        <div class="contacto_visitante">
+                            <p>Telefono: <span>0414-xxx-xxxx</span></p>
+                        </div>
+                        
+                    </div>
+                    <div class="asesor">
+                        <h3>Asesor</h3>
+                        <p>Miguel Rodriguez</p>
+                    </div>
+                    
+                    <span class="eliminar"><img src="imagenes/bx-x.svg" alt=""></span>
+                    <span class="ver_mas">Ver más</span>
+                </div>
+            </div>

@@ -5,7 +5,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 body{
-    background:linear-gradient(to bottom,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url(../imagenes/fondo.png) center;
+    background:linear-gradient(to bottom,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url(../imagenes/fondo_visitante.png) center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -20,7 +20,7 @@ body{
     border-left: solid 4px white;
     padding-left: 5px;
 }
-.contenedor_caja{
+.contenedor{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -29,51 +29,38 @@ body{
     box-sizing: border-box;
     flex-wrap: wrap;
 }
-.caja{
-    background: #292929;
-    min-width: 300px;
-    border-radius: 1em;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 2px 2px 2px 2px rgba(31, 31, 31, 0.555);
-    padding-bottom: 2em;
-    margin: 1em;
+table{
+    min-width: 100%;
+    background: rgba(255, 255, 255, 0.89);
+    border-radius: .5em;
+    padding: 1em 1em 1em 1em;
+    border-spacing: 0;
+    
 }
-.circulo{
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    margin: 16px 0 0 10px;
-    position: absolute;
+table thead tr th{
+    padding: 1em 1em 1em 0;
 }
-.caja h1{
-    color: white;
-    text-align: center;
-    border-bottom: solid 2px rgb(175, 84, 236);
-    display: inline-block;
-    margin-top: .4em;
+table tbody tr th{
+    padding: 1em;
+    border: solid .1px grey;
 }
-.caja h3{
-    margin-left: .8em;
-    margin-top: .8em;
-    color: white;
+table tbody tr td{
+    padding: 1em;
+    border: solid .1px grey;
 }
-.caja p{
-    margin: 1em 2em;
-    color: white;
-}
+
+
 .botones{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3em;
+    margin: 0 0 0 3em;
 }
 .eliminar{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 8em;
+    margin-right: 2em;
 
 }
 .eliminar a{
@@ -81,7 +68,7 @@ body{
     border: solid 2px rgb(236, 32, 32);
     border-radius: .3em;
     text-decoration: none;
-    color: white;
+    color: rgba(44, 43, 43, 0.863);
     transition: all 200ms;
 }
 .eliminar a:hover{
