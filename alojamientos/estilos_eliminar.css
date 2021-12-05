@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.contenedor h1{
+    margin-top: -6em;
+    color: #00A441;
+}
+.caja{
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -15%;
+    padding: 3em 2em;
+    border-radius: 2em;
+}
+.habitacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em 0 1em 0;
+}
+
+.habitacion h2{
+    color: #333A40;
+}
+.habitacion h2 span{
+    color: #E63A40;
+}
+.titulo_eliminar{
+    color: #333A40;
+}
+.sub_titulo{
+    color: #333A40;
+    font-size: 16px;
+    padding-top: .4em;
+}
+.emoji{
+    height: 1.7em;
+    margin-bottom: -.5em;
+}
+.aviso{
+    width: 8em;
+    height: 8em;
+}
+.botones{
+    margin-top: 2em;
+    justify-content: space-evenly;
+    display: flex;
+}
+.cancelar{
+    text-decoration: none;
+    color: white;
+    background: #E63A40;
+    padding: .6em .8em;
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: .3em;
+    cursor: pointer;
+}
+.eliminar{
+    text-decoration: none;
+    color: white;
+    background: #00A441;
+    padding: .6em .8em;
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: .3em;
+    cursor: pointer;
+}

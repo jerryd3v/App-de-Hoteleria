@@ -5,7 +5,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 body{
-    background:linear-gradient(to bottom,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url(../imagenes/fondo_visitante.png) center;
+    background:linear-gradient(to bottom,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url(../imagenes/fondo.png) center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -20,7 +20,7 @@ body{
     border-left: solid 4px white;
     padding-left: 5px;
 }
-.contenedor{
+.contenedor_caja{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -29,49 +29,66 @@ body{
     box-sizing: border-box;
     flex-wrap: wrap;
 }
-table{
-    min-width: 100%;
-    background: rgba(255, 255, 255, 0.89);
-    border-radius: .5em;
-    padding: 1em 1em 1em 1em;
-    border-spacing: 0;
-    
+.caja{
+    background: #333A40;
+    min-width: 300px;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 2px rgba(31, 31, 31, 0.555);
+    padding-bottom: 2em;
+    margin: 1em;
 }
-table thead tr th{
-    padding: 1em 1em 1em 0;
+.circulo{
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    margin: 16px 0 0 10px;
+    position: absolute;
 }
-table tbody tr th{
-    padding: 1em;
-    border: solid .1px grey;
+.caja h1{
+    color: white;
+    text-align: center;
+    border-bottom: solid 2px rgb(175, 84, 236);
+    display: inline-block;
+    margin-top: .4em;
 }
-table tbody tr td{
-    padding: 1em;
-    border: solid .1px grey;
+.caja h3{
+    font-weight: 400;
+    margin-left: .8em;
+    margin-top: .8em;
+    color: rgb(194, 129, 238); 
+}
+.caja p{
+    margin: 1em 2em;
+    color: white;
 }
 
 .botones{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2em 0 0 0;
 }
 .eliminar{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 2em;
+    margin-right: 4.5em;
 
 }
 .eliminar a{
     padding: .4em .5em;
-    border: solid 2px #E63A40;
+    border: solid 2px rgb(236, 32, 32);
     border-radius: .3em;
     text-decoration: none;
-    color: rgba(44, 43, 43, 0.863);
+    color: white;
     transition: all 200ms;
 }
 .eliminar a:hover{
     padding: .4em .5em;
-    background: #E63A40;
+    background: rgb(236, 32, 32);
     border-radius: .3em;
     text-decoration: none;
     color: white;
@@ -91,7 +108,20 @@ table tbody tr td{
     color: white;
     
 }
-.agregar_visitante{
+.alojamiento{
+    font-weight: 200;
+    color: white;
+}
+.precio{
+    color: #00A441;
+}
+.tipo span{
+    color: white;
+}
+.banos span{
+    color: white;
+}
+.agregar_habita{
     position: absolute;
     right: 0;
     text-decoration: none;
@@ -120,6 +150,11 @@ table tbody tr td{
 .titulo_ver_visitante{
     padding-bottom: .3em;
 }
+.titulo_ver_visitante span{
+    margin-left: 1.2em;
+    color: rgb(153, 0, 255);
+    font-size: 3em;
+}
 .datos p {
     font-size: 16px;
     padding: 1em;
@@ -146,7 +181,7 @@ table tbody tr td{
 .broche{
     width: 25px;
     height: 25px;
-    background: rgb(153, 0, 255);
+    background: rgb(47, 46, 48);
     border-radius: 100%;
     position: absolute;
     margin-left: 21.5em;
@@ -192,6 +227,7 @@ table tbody tr td{
     position: absolute;
 }
 
+
 /* Estilos de Registro*/
 .contenedor_registro{
     width: 100%;
@@ -202,7 +238,7 @@ table tbody tr td{
     
 }
 .caja_titulo_form{
-    width: 70%;
+    width: 50%;
     background: #FFFFFF;
     margin-top: 1.5em;
     border-radius: .5em;
@@ -211,12 +247,12 @@ table tbody tr td{
 }
 .agregar_visitante_form{
     padding: 2em 2em 4em 2em;
-    width: 70%;
+    width: 50%;
     background: #FFFFFF;
     margin-top: .7em;
     border-radius: .5em;
     box-shadow: 2px 2px 2px rgba(41, 41, 41, 0.781);
-    min-height: 70vh;
+    min-height: 50vh;
 }
 .titulo_form{
     color: #303335;
@@ -224,6 +260,10 @@ table tbody tr td{
     margin: .4em 0 0 1em;
     letter-spacing: 2px;
     font-weight: lighter;
+}
+.titulo_form span{
+    color:rgb(153, 0, 255);
+    margin-left: 1em;
 }
 .input_form{
     margin: 2em 2em 0 1em;
@@ -301,11 +341,14 @@ label{
     text-decoration: none;
     color: white;
 }
+.baños_label{
+    margin-left: 3.4em;
+}
 .botones_form{
     display: flex;
     justify-content: center;
     width: 200px;
-    margin-top: 4em;
+    margin-top: 8em;
 }
 .cancelar_form{
     padding: 1em 1em;

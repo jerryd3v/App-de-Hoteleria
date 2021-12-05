@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospedate | Jerry R.</title>
+    <title> Asesores | Jerry R.</title>
     <link rel="shortcut icon" href="../imagenes/favicon.icon" type="image/x-icon">
-    <link rel="stylesheet" href="estilos_visitantes.css">
+    <link rel="stylesheet" href="estilos_asesor.css">
     <link rel="stylesheet" href="estilos_menu_nav.css">
 </head>
 
 <body>
     <?php
-    include_once "../php/visitante.php";
-    $visitantes = VISITANTE::obtener_todo();
+    include_once "../php/asesor.php";
+    $asesores = ASESOR::obtener_todo();
     ?>
     <header>
         <div class="titulo">
@@ -27,18 +27,18 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamientos/index.php">Alojamientos</a></li>
-                        <li><a href="visitantes.php">Visitantes</a></li>
-                        <li><a href="../asesores/index.php">Asesores</a></li>
+                        <li><a href="../visitantes/visitantes.php">Visitantes</a></li>
+                        <li><a href="index.php">Asesores</a></li>
                         <li><a href="#">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
             </div>
-            <a class="agregar_visitante" href="formulario_visitante.php">Agregar</a>
+            <a class="agregar_visitante" href="formulario_asesor.php">Agregar</a>
         </div>
     </header>
     <main>
-        <h1 class="sub_titulo">Visitantes</h1>
+        <h1 class="sub_titulo">Asesores</h1>
         <div class="contenedor">
             <div class="caja_tabla">
                 <table>
@@ -47,31 +47,27 @@
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Cedula</th>
-                            <th>Telefono</th>
                             <th>Alojamiento</th>
-                            <th>Habitacion</th>
                             <th>Modificar</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($visitantes as $visitante) { ?>
+                        <?php foreach ($asesores as $asesor) { ?>
                             <tr>
-                                <td><?php echo $visitante["nombre"] ?></td>
-                                <td><?php echo $visitante["apellido"] ?></td>
-                                <td><?php echo $visitante["cedula"] ?></td>
-                                <td><?php echo $visitante["telefono"] ?></td>
-                                <td><?php echo $visitante["alojamiento"] ?></td>
-                                <td><?php echo $visitante["habitacion"] ?></td>
+                                <td><?php echo $asesor["nombre"] ?></td>
+                                <td><?php echo $asesor["apellido"] ?></td>
+                                <td><?php echo $asesor["id_cedula"] ?></td>
+                                <td><?php echo $asesor["alojamiento"] ?></td>
                                 <td>
                                     <div class="botones">
                                         <div class="eliminar">
-                                            <a href="aviso_eliminar.php?id=<?php echo $visitante["id_visitante"] ?>&nombre=<?php echo $visitante["nombre"] ?>&apellido=<?php echo $visitante["apellido"] ?>">
+                                            <a href="aviso_eliminar.php?id_cedula=<?php echo $asesor["id_cedula"] ?>&nombre=<?php echo $asesor["nombre"] ?>&apellido=<?php echo $asesor["apellido"] ?>">
                                                 Eliminar
                                             </a>
                                         </div>
                                         <div class="ver_mas">
-                                            <a href="ver_visitante.php?id=<?php echo $visitante["id_visitante"] ?>">
+                                            <a href="ver_asesor.php?id_cedula=<?php echo $asesor["id_cedula"] ?>">
                                                 Ver más
                                             </a>
                                         </div>

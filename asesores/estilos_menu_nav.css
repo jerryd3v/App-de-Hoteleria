@@ -41,7 +41,8 @@ z-index: 20000;
 transition: opacity 400ms;
 right: 0;
 top: 0;
-margin: .3em 1.3em 0 0;
+margin: .1em 1.3em 0 0;
+cursor: pointer;
 
 }
 #icon_menu_x{
@@ -53,6 +54,7 @@ margin: .3em 1.3em 0 0;
     right: 0;
     top: 0;
     margin: .3em 330px 0 0;
+    cursor: pointer;
 }
 #menu{
     z-index: 19000;

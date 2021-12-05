@@ -1,5 +1,0 @@
-Hospedate creado por Jerry Rodriguez
-
-
-Php 7
-Mysql

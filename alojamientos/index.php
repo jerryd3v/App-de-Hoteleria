@@ -5,73 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospedate | Jerry R.</title>
+    <title>Alojamientos | Jerry R.</title>
     <link rel="shortcut icon" href="../imagenes/favicon.icon" type="image/x-icon">
-    <link rel="stylesheet" href="estilos_visitantes.css">
+    <link rel="stylesheet" href="estilos_alojamientos.css">
     <link rel="stylesheet" href="estilos_menu_nav.css">
 </head>
 
 <body>
-    <?php
-    include_once "../php/visitante.php";
-    $visitantes = VISITANTE::obtener_todo();
-    ?>
     <header>
         <div class="titulo">
             <p><span>H</span>ospedate</p>
             <!--Menu Mobile-->
             <input class="d-none" type="checkbox" id="check">
-            <label class="menu_label" for="check"><img id="icon_menu" src="../imagenes/bx-menu.svg" alt="menu"> <img id="icon_menu_x" src="../imagenes/bx-x.svg" alt="menu"></label>
+            <label class="menu_label" for="check"><img id="icon_menu" src="../imagenes/bx-menu.svg" alt="menu"> <img
+                    id="icon_menu_x" src="../imagenes/bx-x.svg" alt="menu"></label>
             <div id="menu">
                 <nav>
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
-                        <li><a href="../alojamientos/index.php">Alojamientos</a></li>
-                        <li><a href="visitantes.php">Visitantes</a></li>
+                        <li><a href="index.php">Alojamientos</a></li>
+                        <li><a href="../visitantes/visitantes.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
                         <li><a href="#">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
             </div>
-            <a class="agregar_visitante" href="formulario_visitante.php">Agregar</a>
+            <a class="agregar_visitante" href="formulario_alojamiento.php">Agregar</a>
         </div>
     </header>
+    <?php 
+    include_once "../php/alojamiento.php";
+    $alojamientos = ALOJAMIENTO::obtener_todo();
+    ?>
     <main>
-        <h1 class="sub_titulo">Visitantes</h1>
+    <h1 class="sub_titulo">Alojamientos</h1>
         <div class="contenedor">
             <div class="caja_tabla">
                 <table>
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Cedula</th>
+                            <th>Nombre de Alojamiento</th>
                             <th>Telefono</th>
-                            <th>Alojamiento</th>
-                            <th>Habitacion</th>
-                            <th>Modificar</th>
-
+                            <th>Direccion</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($visitantes as $visitante) { ?>
+                    <?php foreach ($alojamientos as $alojamiento) { ?>
                             <tr>
-                                <td><?php echo $visitante["nombre"] ?></td>
-                                <td><?php echo $visitante["apellido"] ?></td>
-                                <td><?php echo $visitante["cedula"] ?></td>
-                                <td><?php echo $visitante["telefono"] ?></td>
-                                <td><?php echo $visitante["alojamiento"] ?></td>
-                                <td><?php echo $visitante["habitacion"] ?></td>
+                                <td><?php echo $alojamiento["nombre"] ?></td>
+                                <td><?php echo $alojamiento["telefono"] ?></td>
+                                <td><?php echo $alojamiento["direccion"] ?></td>
                                 <td>
                                     <div class="botones">
                                         <div class="eliminar">
-                                            <a href="aviso_eliminar.php?id=<?php echo $visitante["id_visitante"] ?>&nombre=<?php echo $visitante["nombre"] ?>&apellido=<?php echo $visitante["apellido"] ?>">
+                                            <a href="aviso_eliminar.php?nombre=<?php echo $alojamiento["nombre"] ?>">
                                                 Eliminar
                                             </a>
                                         </div>
                                         <div class="ver_mas">
-                                            <a href="ver_visitante.php?id=<?php echo $visitante["id_visitante"] ?>">
+                                            <a href="ver_alojamiento.php?nombre=<?php echo $alojamiento["nombre"] ?>">
                                                 Ver más
                                             </a>
                                         </div>
@@ -82,7 +75,6 @@
                                 </td>
                             </tr>
                         <?php } ?>
-
                     </tbody>
                 </table>
             </div>

@@ -264,10 +264,10 @@ table tbody tr td{
     width: 300px;
 }
 .grupo_1{
-    margin-top: 1em;
+    margin-top: 2.5em;
 }
 .grupo_2{
-    margin-top: 1em;
+    margin-top: 4em;
 }
 .grupo_3{
     margin-top: 1em;
@@ -328,4 +328,7 @@ label{
     border: none;
     cursor: pointer;
     font-size: 14px;
+}
+#label_direccion{
+    margin-left: 3em;
 }
