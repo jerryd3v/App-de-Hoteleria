@@ -23,10 +23,9 @@
                 <nav>
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
-                        <li><a href="index.php">Alojamientos</a></li>
-                        <li><a href="../visitantes/visitantes.php">Visitantes</a></li>
+                        <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -46,7 +45,7 @@
                     <thead>
                         <tr>
                             <th>Nombre de Alojamiento</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Direccion</th>
                         </tr>
                     </thead>

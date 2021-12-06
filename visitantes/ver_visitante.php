@@ -21,9 +21,9 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamientos/index.php">Alojamientos</a></li>
-                        <li><a href="visitantes.php">Visitantes</a></li>
+                        <li><a href="index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -49,10 +49,10 @@
                 <p>Sexo: <span><?php echo $visitante->sexo?></span></p>
                 <p>Direccion: <div class="direccion_ver"><p id="direccion_ver_p"><?php echo $visitante->direccion?></p></div></p>
                 <p>Estado: <span><?php echo $visitante->estado?></span></p>
-                <p>Telefono: <span><?php echo $visitante->telefono?></span></p>
+                <p>Teléfono: <span><?php echo $visitante->telefono?></span></p>
                 <p>Fecha de Nacimiento: <span><?php echo $visitante->fecha_nacimiento?></span></p>
                 <p>Alojamiento: <span><?php echo $visitante->alojamiento?></span></p>
-                <p> Habitacion: <span><?php echo $visitante->habitacion?></span></p>
+                <p> Habitación: <span><?php echo $visitante->habitacion?></span></p>
                 
                 <div class="botones_ver">
                                         <div class="eliminar_ver">
@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="regresar">
-            <a href="visitantes.php"> Regresar</a>
+            <a href="index.php"> Regresar</a>
         </div>
     </div>
 </body>

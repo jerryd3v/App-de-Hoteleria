@@ -150,11 +150,7 @@ body{
 .titulo_ver_visitante{
     padding-bottom: .3em;
 }
-.titulo_ver_visitante span{
-    margin-left: 1.2em;
-    color: rgb(153, 0, 255);
-    font-size: 1em;
-}
+
 .datos p {
     font-size: 16px;
     padding: 1em;
@@ -168,14 +164,14 @@ body{
     font-weight: 400;
 }
 
-#direccion_ver_p{
-    background: rgb(153, 0, 255);
+#descripcion{
+    background: rgb(255, 255, 255);
     padding: .4em;
     border-radius: .4em;
-    color: white;
+    color: black;
     font-weight: 200;
     min-width: 100px ;
-    max-width: 250px;
+    max-width: 345px;
     margin-left: 1em;
 }
 .broche{

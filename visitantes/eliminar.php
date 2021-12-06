@@ -11,6 +11,6 @@ VISITANTE::eliminar($_GET['id']);
 ?>
 <script>
     setTimeout(() => {
-        window.location.href = "visitantes.php";
+        window.location.href = "index.php";
     }, 2000);
 </script>

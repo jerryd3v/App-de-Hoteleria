@@ -1,5 +1,5 @@
 <?php
-// Aqui creo la clases Padre de Personas
+// Aqui creo la clases Padre de las Personas
 
 class PERSONA 
 {

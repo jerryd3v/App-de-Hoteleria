@@ -23,9 +23,9 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamientos/index.php">Alojamientos</a></li>
-                        <li><a href="../visitantes/visitantes.php">Visitantes</a></li>
+                        <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -39,7 +39,10 @@
         <div class="caja_titulo_form">
             <h1 class="titulo_form">Registrar Asesor</h1>
         </div>
-
+        <?php
+        include_once '../php/alojamiento.php'; // importo alojamiento para poder usaro en el formulario, en el apartado de seleccion
+        $alojamientos= ALOJAMIENTO::obtener_todo(); // aguardo el metodo estatico
+        ?>
         <!--Formulario-->
         <form action="agregar.php" class="agregar_visitante_form">
             <div class="grupo_1">
@@ -54,10 +57,10 @@
             <div class="grupo_2">
             <span class="span_alojamiento">Elige un alojamineto: </span><select name="alojamiento">
                 <option value="">Elije uno</option>
-                <option>AB Beach Hotel</option>
-                <option>los cocos</option>
-                <option>playota</option>
-                <option>pantaleta</option>
+                <!--Creo un for each para recorrer los valores de la tabla con la ayuda del metodo estatico del objeto-->
+                <?php foreach ($alojamientos as $alojamiento) { ?>                   
+                    <option> <?php echo $alojamiento['nombre']?></option>
+                <?php } ?>
             </select>
                 
                 <label id="label_direccion" for="direccion_for">Direccion</label>

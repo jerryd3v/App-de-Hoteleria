@@ -23,15 +23,15 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamientos/index.php">Alojamientos</a></li>
-                        <li><a href="visitantes.php">Visitantes</a></li>
+                        <li><a href="index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
             </div>
             <div class="regresar_form">
-                <a href="visitantes.php"> Regresar</a>
+                <a href="index.php"> Regresar</a>
             </div>
         </div>
     </header>
@@ -43,7 +43,14 @@
         <div class="caja_titulo_form">
             <h1 class="titulo_form">Editar Visitante</h1>
         </div>
+        <?php
+        include_once '../php/alojamiento.php'; // importo alojamiento para poder usaro en el formulario de actualizacion, en el apartado de seleccion
+        include_once '../php/habitacion.php';// importo habitacion con el mismo objetivo que alojamiento
 
+        $alojamientos= ALOJAMIENTO::obtener_todo(); // aguardo el metodo estatico
+        $habitaciones= HABITACION::obtener_todo();
+
+        ?>
         <!--Formulario-->
         <form action="actualizar.php" class="agregar_visitante_form" method="POST">
             <div class="grupo_1">
@@ -58,7 +65,7 @@
             <div class="grupo_2">
                 <label for="cedula">Cedula:</label>
                 <input id="cedula" class="cedula input_form" type="text" placeholder="Cedula" name="cedula" value="<?php echo $visitante->cedula ?>" required>
-                <label for="telefono">Telefono:</label>
+                <label for="telefono">Teléfono:</label>
                 <input id="telefono" class="telefono input_form" type="text" placeholder="Telefono" name="telefono" value="<?php echo $visitante->telefono ?>" required>
                 <label for="fecha">Fecha de Nacimiento:</label>
                 <input id="fecha" class="fecha input_form" type="date" placeholder="Telefono" name="fecha_nacimiento" value="<?php echo $visitante->telefono ?>" required>
@@ -103,17 +110,15 @@
             </select>
             <span class="span_alojamiento">Elige un alojamineto: </span><select name="alojamiento">
                 <option value="">Elije uno</option>
-                <option>AB Beach Hotel</option>
-                <option>los cocos</option>
-                <option>playota</option>
-                <option>pantaleta</option>
+                <?php foreach ($alojamientos as $alojamiento) { ?>                   
+                        <option> <?php echo $alojamiento['nombre']?></option>
+                <?php } ?>
             </select>
-            <span class="span_habitacion">Elige una habitacion: </span><select name="habitacion">
+            <span class="span_habitacion">Elige una habitación: </span><select name="habitacion">
                 <option value="">Elije una</option>
-                <option>A1</option>
-                <option>Z1</option>
-                <option>C33</option>
-                <option>F33</option>
+                <?php foreach ($habitaciones as $habitacion) { ?>                   
+                        <option> <?php echo $habitacion['id_habitacion']?></option>
+                <?php } ?>
             </select>
             </div>
             

@@ -21,9 +21,9 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="index.php">Alojamientos</a></li>
-                        <li><a href="../visitantes.php">Visitantes</a></li>
+                        <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -45,7 +45,7 @@
                 <h1 class="titulo_ver_visitante">Alojamiento</h1>
                 <p>Nombre: <span><?php echo $_GET['nombre']?></span></p>
                 <p>Direccion: <div class="direccion_ver"><p id="direccion_ver_p"><?php echo $alojamiento->direccion?></p></div></p>
-                <p>Telefono: <span><?php echo $alojamiento->telefono?></span></p>
+                <p>Teléfono: <span><?php echo $alojamiento->telefono?></span></p>
                 <div class="botones_ver">
                                         <div class="eliminar_ver">
                                             <a href="aviso_eliminar.php?nombre=<?php echo $_GET['nombre']?>">

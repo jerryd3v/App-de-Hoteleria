@@ -34,12 +34,15 @@ class VISITANTE extends PERSONA
             (id_visitante,nombre, apellido, cedula, sexo, direccion, estado, telefono, fecha_nacimiento, alojamiento, habitacion)
                 VALUES
                 (?,?,?,?,?,?,?,?,?,?,?)");
-        // aqui al decir "ississssss" le estoy indicando que los datos a recibir seran (s:integer y s:string)
+
+        // aqui al decir "ississsssss" le estoy indicando que los datos 
+        //a recibir seran (i:integer y s:string)
+        
         $sentencia->bind_param("ississsssss", $this->id, $this->nombre, $this->apellido,$this->cedula, $this->sexo,$this->direccion, $this->estado,$this->telefono, $this->fecha_nacimiento, $this->alojamiento, $this->habitacion);
         $sentencia->execute(); // ejecuto el bind_param
     }
 
-    // aqui obtengo la lista completa de todas las personas de la tabla
+    // aqui obtengo la lista completa de todas los visitantes de la tabla
     public static function obtener_todo()
     {
         global $conexion;
@@ -47,7 +50,7 @@ class VISITANTE extends PERSONA
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
-    // aqui obtengo solo una persona
+    // aqui obtengo solo un visitante
     public static function obtener_uno($id)
     {
         global $conexion;
@@ -59,7 +62,7 @@ class VISITANTE extends PERSONA
         
     }
 
-    // aqui actualizo los datos de la persona seleccionada
+    // aqui actualizo los datos del visitante seleccionado
     public function actualizar()
     {
         global $conexion;
@@ -68,7 +71,7 @@ class VISITANTE extends PERSONA
         $sentencia->execute();
     }
 
-    // aqui elimino a la persona seleccionada
+    // aqui elimino al visitante seleccionado
     public static function eliminar($id)
     {
         global $conexion;

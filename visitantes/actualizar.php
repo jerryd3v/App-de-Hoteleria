@@ -13,6 +13,6 @@ echo " <div class=\"contenedor\" style=\" margin-top: 10em;
 ?>
 <script>
     setTimeout(() => {
-        window.location.href = "visitantes.php";
+        window.location.href = "index.php";
     }, 2000);
 </script>

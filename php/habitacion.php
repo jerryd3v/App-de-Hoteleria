@@ -1,7 +1,7 @@
 <?php
 include_once 'conexion.php'; // importo la conexion
 
-// creo la clase hijo Llamada VISITANTE
+// creo la claseLlamada VISITANTE
 class HABITACION
 {
 
@@ -33,7 +33,7 @@ class HABITACION
         $sentencia->execute(); // ejecuto el bind_param
     }
 
-    // aqui obtengo la lista completa de todas las personas de la tabla
+    // aqui obtengo la lista completa de todas las habitaciones de la tabla
     public static function obtener_todo()
     {
         global $conexion;
@@ -41,7 +41,7 @@ class HABITACION
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
-    // aqui obtengo solo una persona
+    // aqui obtengo solo una habitacion
     public static function obtener_uno($id)
     {
         global $conexion;
@@ -53,7 +53,7 @@ class HABITACION
         
     }
 
-    // aqui actualizo los datos de la persona seleccionada
+    // aqui actualizo los datos de la habitacion seleccionada
     public function actualizar()
     {
         global $conexion;
@@ -62,7 +62,7 @@ class HABITACION
         $sentencia->execute();
     }
 
-    // aqui elimino a la persona seleccionada
+    // aqui elimino a la habitacion seleccionada
     public static function eliminar($id)
     {
         global $conexion;

@@ -40,7 +40,7 @@ class ASESOR extends PERSONA
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
-    // aqui obtengo solo una persona
+    // aqui obtengo solo un asesor
     public static function obtener_uno($id)
     {
         global $conexion;
@@ -51,7 +51,7 @@ class ASESOR extends PERSONA
         return $resultado->fetch_object();
     }
 
-    // aqui actualizo los datos de la persona seleccionada
+    // aqui actualizo los datos del asesor seleccionado
     public function actualizar()
     { 
         global $conexion;
@@ -60,7 +60,7 @@ class ASESOR extends PERSONA
         $sentencia->execute();
     }
 
-    // aqui elimino a la persona seleccionada
+    // aqui elimino al asesor seleccionado
     public static function eliminar($id)
     {
         global $conexion;

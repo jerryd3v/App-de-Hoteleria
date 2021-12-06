@@ -23,9 +23,9 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamientos/index.php">Alojamientos</a></li>
-                        <li><a href="../visitantes/visitantes.php">Visitantes</a></li>
+                        <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -39,10 +39,13 @@
         <div class="caja_titulo_form">
             <h1 class="titulo_form">Registrar Asesor</h1>
         </div>
-        <!-- Importo la clase para obetener un asesor por su id_cedula-->
+        
         <?php
-        include_once '../php/asesor.php';
+        include_once '../php/alojamiento.php'; // importo alojamiento para poder usaro en el formulario, en el apartado de seleccion
+        include_once '../php/asesor.php';//Importo la clase para obtener un asesor por su id_cedula
         $asesor = ASESOR::obtener_uno($_GET['id_cedula']);
+        
+        $alojamientos = ALOJAMIENTO::obtener_todo(); // aguardo el metodo estatico
         ?>
 
         <!--Formulario-->
@@ -53,17 +56,17 @@
 
                 <label for="apellido">Apellido:</label>
                 <input id="apellido" class="nombre input_form" type="text" placeholder="Apellido" name="apellido" value="<?php echo $asesor->apellido ?>" required>
-                
+
                 <label for="cedula"></label>
                 <input id="cedula" class="apellido input_form" type="hidden" placeholder="Cedula" name="id_cedula" value="<?php echo $_GET["id_cedula"] ?>" required>
             </div>
             <div class="grupo_2">
                 <span class="span_alojamiento">Elige un alojamineto: </span><select name="alojamiento">
                     <option value="">Elije uno</option>
-                    <option>AB Beach Hotel</option>
-                    <option>los cocos</option>
-                    <option>playota</option>
-                    <option>pantaleta</option>
+                    <!--Creo un for each para recorrer los valores de la tabla con la ayuda del metodo estatico del objeto-->
+                    <?php foreach ($alojamientos as $alojamiento) { ?>
+                        <option> <?php echo $alojamiento['nombre'] ?></option>
+                    <?php } ?>
                 </select>
 
                 <label id="label_direccion" for="direccion_for">Direccion</label>

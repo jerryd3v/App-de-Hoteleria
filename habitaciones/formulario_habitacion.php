@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Habitacion | Hospedate</title>
+    <title>Registrar Habitación | Hospedate</title>
     <link rel="shortcut icon" href="../imagenes/favicon.icon" type="image/x-icon">
     <link rel="stylesheet" href="estilos_habitacion.css">
     <link rel="stylesheet" href="estilos_menu_nav.css">
@@ -23,9 +23,9 @@
                     <ul>
                         <li><a href="index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamientos/index.php">Alojamientos</a></li>
-                        <li><a href="../visitantes/visitantes.php">Visitantes</a></li>
+                        <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -39,6 +39,10 @@
         <div class="caja_titulo_form">
             <h1 class="titulo_form">Registrar Habitaciones</h1>
         </div>
+        <?php 
+        include_once '../php/alojamiento.php';
+        $alojamientos = ALOJAMIENTO::obtener_todo();
+        ?>
 
         <!--Formulario-->
         <form action="agregar.php" class="agregar_visitante_form">
@@ -80,10 +84,9 @@
 
                 <span class="span_alojamiento">Elige un Alojamiento: </span><select name="alojamiento">
                     <option value="">Elije uno</option>
-                    <option>AB Beach Hotel</option>
-                    <option>los cocos</option>
-                    <option>playota</option>
-                    <option>pantaleta</option>
+                    <?php foreach ($alojamientos as $alojamiento) { ?>                   
+                        <option> <?php echo $alojamiento['nombre']?></option>
+                    <?php } ?>
                 </select>
 
             </div>

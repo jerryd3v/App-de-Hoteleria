@@ -4,7 +4,7 @@ $habitacion = new HABITACION($_GET['id_habitacion'],$_GET['precio'],$_GET['tipo'
 $habitacion->guardar();
 echo " <div class=\"contenedor\" style=\" margin-top: 10em;
                 color: #00A441; display: flex; justify-content: center; \">
-                <h1>Habitacion Registrada Con Exito!!!</h1>
+                <h1>Habitación Registrada Con Exito!!!</h1>
                     </div> ";
 ?>
 <script>

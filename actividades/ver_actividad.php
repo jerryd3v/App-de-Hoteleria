@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../imagenes/favicon.icon" type="image/x-icon">
-    <link rel="stylesheet" href="estilos_habitacion.css">
+    <link rel="stylesheet" href="estilos_ver.css">
     <link rel="stylesheet" href="estilos_menu_nav.css">
-    <title>Ver Alojamientos | Hospedate</title>
+    <title>Ver Actividad | Hospedate</title>
 </head>
 
 <body>
@@ -21,11 +21,11 @@
             <div id="menu">
                 <nav>
                     <ul>
-                        <li><a href="index.php"><span>H</span>abitaciones</a></li>
+                        <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamiento/index">Alojamientos</a></li>
                         <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
-                        <li><a href="../actividades/index.php">Actividades</a></li>
+                        <li><a href="index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -33,8 +33,8 @@
         </div>
     </header>
     <?php
-    include_once '../php/habitacion.php';
-    $habitacion = HABITACION::obtener_uno($_GET['id_habitacion']);
+    include_once '../php/actividad.php';
+    $actividad = ACTIVIDAD::obtener_uno($_GET['id_actividad']);
 
     ?>
     <!--php echo $alojamiento->nombre  echo $alojamiento->apellido-->
@@ -44,22 +44,25 @@
         <div class="caja_ver_visitante">
             <div class="broche"></div>
             <div class="datos">
-                <h1 class="titulo_ver_visitante">Habitación <span><?php echo $_GET['id_habitacion'] ?></span></h1>
-                <p>Precio:
-                <span><?php echo $habitacion->precio ?>$</span>
+                <h1 class="titulo_ver_visitante">Actividad</h1>
+                <p>Nombre: <span><?php echo $_GET['id_actividad']  ?></span></p>
+                <p>Tipo: <span><?php echo $actividad->tipo ?></span></p>
+                <p>Gasto Extra:
+                <span><?php echo $actividad->gasto_extra ?>$</span>
                 </p>
-                <p>Tipo: <span><?php echo $habitacion->tipo ?></span></p>
-                <p>Baños: <span><?php echo $habitacion->baños ?></span></p>
-                <p>Cuartos: <span><?php echo $habitacion->cuartos ?></span></p>
-                <p>Alojamiento: <span><?php echo $habitacion->alojamiento ?></span></p>
+                <p>Dificultad: <span><?php echo $actividad->dificultad ?></span></p>
+                <p>Frecuencia: <span><?php echo $actividad->frecuencia ?></span></p>
+                <p id="descripcion_titulo">Descripcion:</p>
+                <p id="descripcion"><?php echo $actividad->descripcion ?></p>
+                <p>Alojamiento: <span><?php echo $actividad->alojamiento ?></span></p>
                 <div class="botones_ver">
                     <div class="eliminar_ver">
-                        <a href="aviso_eliminar.php?id_habitacion=<?php echo $_GET['id_habitacion'] ?>">
+                        <a href="aviso_eliminar.php?id_actividad=<?php echo $_GET['id_actividad'] ?>">
                             Eliminar
                         </a>
                     </div>
                     <div class="ver_mas">
-                        <a href="formulario_actualizar.php?id_habitacion=<?php echo $_GET['id_habitacion'] ?>">
+                        <a href="formulario_actualizar.php?id_actividad=<?php echo $_GET['id_actividad'] ?>">
                             Editar
                         </a>
                     </div>

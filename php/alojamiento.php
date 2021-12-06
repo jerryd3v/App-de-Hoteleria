@@ -30,7 +30,7 @@ class ALOJAMIENTO
         $sentencia->execute(); // ejecuto el bind_param
     }
 
-    // aqui obtengo la lista completa de todas las personas de la tabla
+    // aqui obtengo la lista completa de todas los alojamientos de la tabla
     public static function obtener_todo()
     {
         global $conexion;
@@ -38,7 +38,7 @@ class ALOJAMIENTO
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
-    // aqui obtengo solo una persona
+    // aqui obtengo solo un alojamiento
     public static function obtener_uno($id)
     {
         global $conexion;
@@ -50,7 +50,7 @@ class ALOJAMIENTO
         
     }
 
-    // aqui actualizo los datos de la persona seleccionada
+    // aqui actualizo los datos del alojamiento seleccionado
     public function actualizar()
     {
         global $conexion;
@@ -59,7 +59,7 @@ class ALOJAMIENTO
         $sentencia->execute();
     }
 
-    // aqui elimino a la persona seleccionada
+    // aqui elimino a al alojamiento seleccionada
     public static function eliminar($id)
     {
         global $conexion;

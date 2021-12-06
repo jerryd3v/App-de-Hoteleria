@@ -27,9 +27,8 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamientos/index.php">Alojamientos</a></li>
-                        <li><a href="visitantes.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -47,9 +46,9 @@
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Cedula</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Alojamiento</th>
-                            <th>Habitacion</th>
+                            <th>Habitación</th>
                             <th>Modificar</th>
 
                         </tr>

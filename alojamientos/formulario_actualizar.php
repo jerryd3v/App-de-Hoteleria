@@ -23,9 +23,9 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="index.php">Alojamientos</a></li>
-                        <li><a href="../visitantes/visitantes.php">Visitantes</a></li>
+                        <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -50,7 +50,7 @@
                 <label for="id_visitante"></label>
                 <input  class="id_visitante input_form" type="hidden" placeholder="Ingrese ID" name="nombre" value="<?php echo $_GET["nombre"] ?>" required>
 
-                <label for="nombre">Telefono:</label>
+                <label for="nombre">Teléfono:</label>
                 <input id="nombre" class="nombre input_form" type="text" placeholder="Telefono" name="telefono" value="<?php echo $alojamiento->telefono ?>" required>
                 <label for="apellido">Direccion:</label>
                 <input id="apellido" class="apellido input_form" type="text" placeholder="Direccion" name="direccion" value="<?php echo $alojamiento->direccion ?>" required>

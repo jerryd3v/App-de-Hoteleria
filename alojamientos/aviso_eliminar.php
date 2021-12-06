@@ -23,24 +23,20 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="index.php">Alojamientos</a></li>
-                        <li><a href="../visitantes/visitantes.php">Visitantes</a></li>
+                        <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
             </div>
         </div>
     </header>
-    <?php
-    include_once "../php/conexion.php";
-    include_once "../php/alojamiento.php";
-    ?>
     <div class="contenedor">
         <div class="caja">
             <img class="aviso" src="../imagenes/aviso.svg" alt="aviso-imagen" title="Aviso">
             <div class="habitacion">
-                <h2>Nombre: <span><?php echo $_GET['nombre'] ?></span></h2>
+                <h2>Alojamiento: <span><?php echo $_GET['nombre'] ?></span></h2>
             </div>
             <h2 class="titulo_eliminar">¿Esta seguro que desea Eliminar este Alojamiento?</h2>
             <h3 class="sub_titulo">Esta operacion es irreversible <img class="emoji" title="Triste" src="../imagenes/emoji.png"></p>

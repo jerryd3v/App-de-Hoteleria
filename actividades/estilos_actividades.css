@@ -115,13 +115,17 @@ body{
 .precio{
     color: #00A441;
 }
+
 .tipo span{
     color: white;
 }
 .banos span{
     color: white;
 }
-.agregar_habita{
+.frecuencia{
+    color: white;
+}
+.agregar_actividad{
     position: absolute;
     right: 0;
     text-decoration: none;
@@ -153,7 +157,7 @@ body{
 .titulo_ver_visitante span{
     margin-left: 1.2em;
     color: rgb(153, 0, 255);
-    font-size: 1em;
+    font-size: 3em;
 }
 .datos p {
     font-size: 16px;
@@ -246,7 +250,7 @@ body{
     height: 50px;
 }
 .agregar_visitante_form{
-    padding: 2em 2em 4em 2em;
+    padding: 2em 2em 2em 2em;
     width: 50%;
     background: #FFFFFF;
     margin-top: .7em;
@@ -310,14 +314,14 @@ body{
     margin-top: 1em;
 }
 .grupo_3{
-    margin-top: 1em;
+    margin-top: 4em;
 }
 .grupo_3 p{
     margin-top: 1em;
     font-weight: 600;
 }
 .grupo_4{
-    margin-top: 2em;
+    margin-top: 1em
 }
 .grupo_4 span{
     margin: 0 0 0 2em;
@@ -348,7 +352,7 @@ label{
     display: flex;
     justify-content: center;
     width: 200px;
-    margin-top: 8em;
+    margin-top: 2em;
 }
 .cancelar_form{
     padding: 1em 1em;
@@ -371,4 +375,8 @@ label{
     border: none;
     cursor: pointer;
     font-size: 14px;
+}
+#label_actividad{ 
+    color: blueviolet;
+    font-size: 16px;
 }

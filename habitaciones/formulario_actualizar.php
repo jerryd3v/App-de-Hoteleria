@@ -23,9 +23,9 @@
                     <ul>
                         <li><a href="index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamientosindex.php">Alojamientos</a></li>
-                        <li><a href="../visitantes/visitantes.php">Visitantes</a></li>
+                        <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
-                        <li><a href="#">Actividades</a></li>
+                        <li><a href="../actividades/index.php">Actividades</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -37,11 +37,13 @@
     </header>
     <?php
     include_once '../php/habitacion.php';
+    include_once '../php/alojamiento.php';
     $habitacion = HABITACION::obtener_uno($_GET['id_habitacion']);
+    $alojamientos= ALOJAMIENTO::obtener_todo();
     ?>
     <div class="contenedor_registro">
         <div class="caja_titulo_form">
-            <h1 class="titulo_form">Editar Habitacion: <span><?php echo $_GET["id_habitacion"] ?></span></h1>
+            <h1 class="titulo_form">Editar Habitación: <span><?php echo $_GET["id_habitacion"] ?></span></h1>
         </div>
 
         <!--Formulario-->
@@ -84,10 +86,9 @@
 
                 <span class="span_alojamiento">Elige un Alojamiento: </span><select name="alojamiento">
                     <option value="">Elije uno</option>
-                    <option>AB Beach Hotel</option>
-                    <option>los cocos</option>
-                    <option>playota</option>
-                    <option>pantaleta</option>
+                    <?php foreach ($alojamientos as $alojamiento) { ?>                   
+                        <option> <?php echo $alojamiento['nombre']?></option>
+                    <?php } ?>
                 </select>
 
             </div>
