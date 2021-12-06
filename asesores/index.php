@@ -29,6 +29,7 @@
                         <li><a href="../alojamientos/index.php">Alojamientos</a></li>
                         <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../actividades/index.php">Actividades</a></li>
+                        <li><a href="../realiza_actividad/index.php">Actividades Realizadas</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -57,7 +58,7 @@
                                 <td><?php echo $asesor["nombre"] ?></td>
                                 <td><?php echo $asesor["apellido"] ?></td>
                                 <td><?php echo $asesor["id_cedula"] ?></td>
-                                <td><?php echo $asesor["alojamiento"] ?></td>
+                                <td><a href="../alojamientos/ver_alojamiento.php?nombre=<?php echo $asesor['alojamiento']?>"><?php echo $asesor["alojamiento"] ?></a></td>
                                 <td>
                                     <div class="botones">
                                         <div class="eliminar">

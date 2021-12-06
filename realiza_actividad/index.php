@@ -5,17 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospedate | Jerry R.</title>
     <link rel="shortcut icon" href="../imagenes/favicon.icon" type="image/x-icon">
-    <link rel="stylesheet" href="estilos_visitantes.css">
+    <link rel="stylesheet" href="estilos_realizaActividad.css">
     <link rel="stylesheet" href="estilos_menu_nav.css">
+    <title>Actividades Inscritas | Hospedate</title>
 </head>
 
 <body>
-    <?php
-    include_once "../php/visitante.php";
-    $visitantes = VISITANTE::obtener_todo();
-    ?>
     <header>
         <div class="titulo">
             <p><span>H</span>ospedate</p>
@@ -27,54 +23,53 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamientos/index.php">Alojamientos</a></li>
+                        <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
                         <li><a href="../actividades/index.php">Actividades</a></li>
-                        <li><a href="../realiza_actividad/index.php">Actividades Realizadas</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
             </div>
-            <a class="agregar_visitante" href="formulario_visitante.php">Agregar</a>
+            <a class="agregar_realiza_actividad" href="formulario_realiza_actividad.php">Agregar</a>
         </div>
     </header>
-    <main>
-        <h1 class="sub_titulo">Visitantes</h1>
+    <?php
+    include_once '../php/realizaActividad.php';
+    $realiza_actividades = REALIZA_ACTIVIDAD::obtener_todo();
+
+    ?>
+<main>
+<h1 class="sub_titulo">Actividades Realizadas</h1>
         <div class="contenedor">
             <div class="caja_tabla">
                 <table>
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Cedula</th>
-                            <th>Teléfono</th>
+                            <th>Actividad</th>
+                            <th>Visitante</th>
+                            <th>ID Visitante</th>
+                            <th>Referencia</th>
                             <th>Alojamiento</th>
-                            <th>Habitación</th>
-                            <th>Modificar</th>
-
+                            <th>Fecha</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($visitantes as $visitante) { ?>
+                        <?php foreach ($realiza_actividades as $realiza_actividad) { ?>
                             <tr>
-                                <td><?php echo $visitante["nombre"] ?></td>
-                                <td><?php echo $visitante["apellido"] ?></td>
-                                <td><?php echo $visitante["cedula"] ?></td>
-                                <td><?php echo $visitante["telefono"] ?></td>
-                                <td><a href="../alojamientos/ver_alojamiento.php?nombre=<?php echo $visitante['alojamiento']?>"><?php echo $visitante["alojamiento"] ?></a></td>
-                                <td><a href="../habitaciones/ver_habitacion.php?id_habitacion=<?php echo $visitante['habitacion']?>"><?php echo $visitante["habitacion"] ?></td>
+                                <td><a href="../actividades/ver_actividad.php?id_actividad=<?php echo $realiza_actividad['id_actividad']?>"><?php echo $realiza_actividad["id_actividad"] ?></a></td>
+                                <td><a href="../visitantes/ver_visitante.php?id=<?php echo $realiza_actividad['id_visitante']?>"><?php echo $realiza_actividad["nombre_apellido_visitante"] ?></a></td>
+                                <td>#<?php echo $realiza_actividad["id_visitante"] ?></td>
+                                <td><p>#<?php echo $realiza_actividad["referencia"] ?></p></td>
+                                <td><a href="../alojamientos/ver_alojamiento.php?nombre=<?php echo $realiza_actividad['alojamiento']?>"><?php echo $realiza_actividad["alojamiento"] ?></a></td>
+                                <td><p><?php echo $realiza_actividad["fecha"] ?></p></td>
                                 <td>
                                     <div class="botones">
                                         <div class="eliminar">
-                                            <a href="aviso_eliminar.php?id=<?php echo $visitante["id_visitante"] ?>&nombre=<?php echo $visitante["nombre"] ?>&apellido=<?php echo $visitante["apellido"] ?>">
+                                            <a href="aviso_eliminar.php?referencia=<?php echo $realiza_actividad["referencia"] ?>&nombre=<?php echo $realiza_actividad["nombre_apellido_visitante"]?>&fecha=<?php echo $realiza_actividad["fecha"]?>&actividad=<?php echo $realiza_actividad["id_actividad"]?>">
                                                 Eliminar
                                             </a>
                                         </div>
-                                        <div class="ver_mas">
-                                            <a href="ver_visitante.php?id=<?php echo $visitante["id_visitante"] ?>">
-                                                Ver más
-                                            </a>
-                                        </div>
+                        
 
 
                                     </div>
@@ -90,8 +85,8 @@
     </main>
     <footer>
 
+        <script src="menu.js" language="Javascript"></script>
     </footer>
-    <script type="text/javascript" src=" menu.js"></script>
 </body>
 
 </html>

@@ -22,10 +22,11 @@
                 <nav>
                     <ul>
                         <li><a href="index.php"><span>H</span>abitaciones</a></li>
-                        <li><a href="../alojamiento/index">Alojamientos</a></li>
+                        <li><a href="../alojamientos/index.php">Alojamientos</a></li>
                         <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
                         <li><a href="../actividades/index.php">Actividades</a></li>
+                        <li><a href="../realiza_actividad/index.php">Actividades Realizadas</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -51,7 +52,7 @@
                 <p>Tipo: <span><?php echo $habitacion->tipo ?></span></p>
                 <p>Baños: <span><?php echo $habitacion->baños ?></span></p>
                 <p>Cuartos: <span><?php echo $habitacion->cuartos ?></span></p>
-                <p>Alojamiento: <span><?php echo $habitacion->alojamiento ?></span></p>
+                <p>Alojamiento: <span><a id="link" href="../alojamientos/ver_alojamiento.php?nombre=<?php echo $habitacion->alojamiento?>"><?php echo $habitacion->alojamiento ?></a></span></p>
                 <div class="botones_ver">
                     <div class="eliminar_ver">
                         <a href="aviso_eliminar.php?id_habitacion=<?php echo $_GET['id_habitacion'] ?>">

@@ -26,6 +26,7 @@
                         <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
                         <li><a href="../actividades/index.php">Actividades</a></li>
+                        <li><a href="../realiza_actividad/index.php">Actividades Realizadas</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -47,7 +48,7 @@
                     <h1><?php echo $habitacion["id_habitacion"] ?></h1>
                     <div class="caracteristicas_habita">
                         <div class="alojamiento_caja">
-                            <h3>Alojamiento: <span class="alojamiento"><?php echo $habitacion["alojamiento"] ?></span></h3>
+                            <h3>Alojamiento: <a id="link" href="../alojamientos/ver_alojamiento.php?nombre=<?php echo $habitacion['alojamiento']?>"><span class="alojamiento"><?php echo $habitacion["alojamiento"] ?></a></span></h3>
                         </div>
                         <div class="precio_caja">
                             <h3>Precio: <span class="precio"><?php echo $habitacion["precio"] ?>$</span></h3>

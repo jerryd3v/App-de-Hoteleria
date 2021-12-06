@@ -24,6 +24,7 @@
                         <li><a href="index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
                         <li><a href="../actividades/index.php">Actividades</a></li>
+                        <li><a href="../realiza_actividad/index.php">Actividades Realizadas</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -33,7 +34,6 @@
     <?php 
     include_once '../php/visitante.php';
     $visitante = VISITANTE::obtener_uno($_GET['id']);
-
     ?>
     <!--php echo $visitante->nombre  echo $visitante->apellido-->
 
@@ -51,8 +51,8 @@
                 <p>Estado: <span><?php echo $visitante->estado?></span></p>
                 <p>Teléfono: <span><?php echo $visitante->telefono?></span></p>
                 <p>Fecha de Nacimiento: <span><?php echo $visitante->fecha_nacimiento?></span></p>
-                <p>Alojamiento: <span><?php echo $visitante->alojamiento?></span></p>
-                <p> Habitación: <span><?php echo $visitante->habitacion?></span></p>
+                <p>Alojamiento: <span><a id="link" href="../alojamientos/ver_alojamiento.php?nombre=<?php echo $visitante->alojamiento?>"><?php echo $visitante->alojamiento?></a></span></p>
+                <p> Habitación: <span><a id="link" href="../habitaciones/ver_habitacion.php?id_habitacion=<?php echo $visitante->habitacion?>"><?php echo $visitante->habitacion?></a></span></p>
                 
                 <div class="botones_ver">
                                         <div class="eliminar_ver">

@@ -35,10 +35,10 @@ class VISITANTE extends PERSONA
                 VALUES
                 (?,?,?,?,?,?,?,?,?,?,?)");
 
-        // aqui al decir "ississsssss" le estoy indicando que los datos 
+        // aqui al decir "issssssssss" le estoy indicando que los datos 
         //a recibir seran (i:integer y s:string)
         
-        $sentencia->bind_param("ississsssss", $this->id, $this->nombre, $this->apellido,$this->cedula, $this->sexo,$this->direccion, $this->estado,$this->telefono, $this->fecha_nacimiento, $this->alojamiento, $this->habitacion);
+        $sentencia->bind_param("issssssssss", $this->id, $this->nombre, $this->apellido,$this->cedula, $this->sexo,$this->direccion, $this->estado,$this->telefono, $this->fecha_nacimiento, $this->alojamiento, $this->habitacion);
         $sentencia->execute(); // ejecuto el bind_param
     }
 
@@ -62,12 +62,24 @@ class VISITANTE extends PERSONA
         
     }
 
+    // aqui obtengo la id de un visitante mediante su cedula
+    public static function obtener_id($cedula)
+    {
+        global $conexion;
+        $sentencia = $conexion->prepare("SELECT id_visitante, nombre, apellido FROM visitante WHERE cedula = ?");
+        $sentencia->bind_param("s", $cedula);
+        $sentencia->execute();
+        $resultado = $sentencia->get_result();
+        return $resultado->fetch_object();
+        
+    }
+
     // aqui actualizo los datos del visitante seleccionado
     public function actualizar()
     {
         global $conexion;
         $sentencia = $conexion->prepare("UPDATE visitante SET nombre = ?, apellido = ?, cedula = ?, sexo= ?, direccion = ?, estado = ?, telefono = ?, fecha_nacimiento = ?, alojamiento = ?, habitacion = ?  WHERE id_visitante = ?");
-        $sentencia->bind_param("ssisssssssi", $this->nombre, $this->apellido,$this->cedula, $this->sexo,$this->direccion, $this->estado,$this->telefono, $this->fecha_nacimiento, $this->alojamiento, $this->habitacion, $this->id);
+        $sentencia->bind_param("ssssssssssi", $this->nombre, $this->apellido,$this->cedula, $this->sexo,$this->direccion, $this->estado,$this->telefono, $this->fecha_nacimiento, $this->alojamiento, $this->habitacion, $this->id);
         $sentencia->execute();
     }
 

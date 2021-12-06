@@ -26,6 +26,7 @@
                         <li><a href="../visitantes/index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
                         <li><a href="index.php">Actividades</a></li>
+                        <li><a href="../realiza_actividad/index.php">Actividades Realizadas</a></li>
                     </ul>
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
@@ -54,7 +55,7 @@
                 <p>Frecuencia: <span><?php echo $actividad->frecuencia ?></span></p>
                 <p id="descripcion_titulo">Descripcion:</p>
                 <p id="descripcion"><?php echo $actividad->descripcion ?></p>
-                <p>Alojamiento: <span><?php echo $actividad->alojamiento ?></span></p>
+                <p>Alojamiento: <span><a id="link" href="../alojamientos/ver_alojamiento.php?nombre=<?php echo $actividad->alojamiento?>"><?php echo $actividad->alojamiento ?></a></span></p>
                 <div class="botones_ver">
                     <div class="eliminar_ver">
                         <a href="aviso_eliminar.php?id_actividad=<?php echo $_GET['id_actividad'] ?>">
