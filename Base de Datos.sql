@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1: 3306
--- Tiempo de generación: 06-12-2021 a las 23:36:53
+-- Tiempo de generación: 09-12-2021 a las 07:25:51
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.8
 
@@ -64,8 +64,7 @@ CREATE TABLE `alojamiento` (
 INSERT INTO `alojamiento` (`nombre`, `direccion`, `telefono`) VALUES
 ('AB Beach Hotel', 'Higuerote', '0212-1234567'),
 ('Los Cocos', 'Boca de Uchire', '0212-3332211'),
-('Olas Resort', 'Rio chico - Municipio Paez - Estado Miranda', '0212-7652571'),
-('Playita', 'Los Canales', '0412-1234567');
+('Olas Resort', 'Rio chico - Municipio Paez - Estado Miranda', '0212-7652571');
 
 -- --------------------------------------------------------
 
@@ -86,6 +85,7 @@ CREATE TABLE `asesor` (
 --
 
 INSERT INTO `asesor` (`id_cedula`, `nombre`, `apellido`, `direccion`, `alojamiento`) VALUES
+(123456, 'Miguel', 'Patricio', 'Guatire', 'Los Cocos'),
 (12345678, 'carlos', 'coello', 'rio chico', 'AB Beach Hotel');
 
 -- --------------------------------------------------------
@@ -109,7 +109,7 @@ CREATE TABLE `habitacion` (
 
 INSERT INTO `habitacion` (`id_habitacion`, `precio`, `tipo`, `cuartos`, `baños`, `alojamiento`) VALUES
 ('A1', 5, 'Individual', 1, 1, 'AB Beach Hotel'),
-('C23', 12, 'Suite Ejecutiva', 4, 2, 'Los Cocos');
+('VB12', 90, 'Suite Presidencial', 8, 4, 'Los Cocos');
 
 -- --------------------------------------------------------
 
@@ -131,7 +131,7 @@ CREATE TABLE `realiza_actividad` (
 --
 
 INSERT INTO `realiza_actividad` (`referencia`, `nombre_apellido_visitante`, `fecha`, `id_visitante`, `alojamiento`, `id_actividad`) VALUES
-(12342, 'Jerry Rodriguez', '2021-12-16', 123, 'AB Beach Hotel', 'Buceo');
+(234213, 'Pedro ROdolfo', '2021-12-01', 2, 'AB Beach Hotel', 'Buceo');
 
 -- --------------------------------------------------------
 
@@ -158,11 +158,8 @@ CREATE TABLE `visitante` (
 --
 
 INSERT INTO `visitante` (`id_visitante`, `nombre`, `apellido`, `cedula`, `sexo`, `direccion`, `estado`, `telefono`, `fecha_nacimiento`, `alojamiento`, `habitacion`) VALUES
-(123, 'Jerry', 'Rodriguez', '25360607', 'Masculino', 'Rio chico - Municipio Paez', 'Miranda', '0414-2676198', '2021-12-09', 'AB Beach Hotel', 'A1'),
-(232, 'Carlos', 'Guillen', '1234567', 'Masculino', 'Rio chico - Municipio Paez - Estado Miranda', 'Anzoátegui', '0212-7652571', '2015-01-28', 'AB Beach Hotel', 'A1'),
-(444, 'Luisa', 'Barcelo', '20181991-Menor-01', 'Femenino', 'Caracas', 'Distrito Federal', '04161232123', '2021-12-08', 'Olas Resort', 'A1'),
-(1234, 'Melanie', 'Herrera', '28345612', 'Femenino', 'Rio chico - Municipio Paez', 'Amazonas', '0412-1234567', '2021-12-30', 'AB Beach Hotel', 'A1'),
-(12134, 'Raul', 'Oñate', '20181991', 'Masculino', 'Clarines', 'Anzoátegui', '04161232123', '1993-02-03', 'Los Cocos', 'C23');
+(2, 'Pedro', 'ROdolfo', '12984648', 'Masculino', 'Clarines', 'Bolívar', '04161232123', '2021-11-30', 'AB Beach Hotel', 'A1'),
+(3, 'Melanie', 'Herrera', '29234192', 'Femenino', 'Mamporal', 'Miranda', '0212-3332211', '2000-02-15', 'AB Beach Hotel', 'A1');
 
 --
 -- Índices para tablas volcadas
@@ -211,6 +208,16 @@ ALTER TABLE `visitante`
   ADD PRIMARY KEY (`id_visitante`),
   ADD KEY `alojamiento` (`alojamiento`,`habitacion`),
   ADD KEY `habitacion` (`habitacion`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `visitante`
+--
+ALTER TABLE `visitante`
+  MODIFY `id_visitante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

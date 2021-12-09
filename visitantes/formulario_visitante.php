@@ -51,8 +51,8 @@
         <!--Formulario-->
         <form action="agregar.php" class="agregar_visitante_form">
             <div class="grupo_1">
-                <label for="id_visitante">ID Visitante:</label>
-                <input class="id_visitante input_form" type="text" placeholder="Ingrese ID" name="id_visitante" required>
+                <!--<label for="id_visitante">ID Visitante:</label>
+                <input class="id_visitante input_form" type="text" placeholder="Ingrese ID" name="id_visitante" required>-->
 
                 <label for="nombre">Nombre:</label>
                 <input id="nombre" class="nombre input_form" type="text" placeholder="Nombre" name="nombre" required>

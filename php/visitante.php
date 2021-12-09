@@ -6,10 +6,10 @@ include_once 'persona.php'; // importo la clase padre PERSONA
 class VISITANTE extends PERSONA
 {
 
-    private $id=null, $nombre, $apellido, $cedula, $sexo, $direccion, $estado, $telefono, $fecha_nacimiento, $alojamiento, $habitacion; // aqui declaro las propiedades nuevas
+    private $nombre, $apellido, $cedula, $sexo, $direccion, $estado, $telefono, $fecha_nacimiento, $alojamiento, $habitacion; // aqui declaro las propiedades nuevas
 
     // en caso de que el id este nulo no se guardara en la base de datos
-    public function __construct( $id, $nombre, $apellido, $cedula, $sexo, $direccion, $estado, $telefono, $fecha_nacimiento, $alojamiento, $habitacion)
+    public function __construct( $nombre, $apellido, $cedula, $sexo, $direccion, $estado, $telefono, $fecha_nacimiento, $alojamiento, $habitacion)
     {
         $this->nombre = $nombre;
         $this->apellido = $apellido;
@@ -21,9 +21,7 @@ class VISITANTE extends PERSONA
         $this->fecha_nacimiento= $fecha_nacimiento;
         $this->alojamiento = $alojamiento;
         $this->habitacion= $habitacion;
-        if ($id) {// si la clase no es nula se le asigna el valor
-            $this->id = $id;
-        }
+        
     }
 
     // aqui guardo los valores en la base de datos
@@ -31,14 +29,14 @@ class VISITANTE extends PERSONA
     {
         global $conexion; // declaro la conexion importada como global
         $sentencia = $conexion->prepare("INSERT INTO visitante
-            (id_visitante,nombre, apellido, cedula, sexo, direccion, estado, telefono, fecha_nacimiento, alojamiento, habitacion)
+            (nombre, apellido, cedula, sexo, direccion, estado, telefono, fecha_nacimiento, alojamiento, habitacion)
                 VALUES
-                (?,?,?,?,?,?,?,?,?,?,?)");
+                (?,?,?,?,?,?,?,?,?,?)");
 
-        // aqui al decir "issssssssss" le estoy indicando que los datos 
+        // aqui al decir "ssssssssss" le estoy indicando que los datos 
         //a recibir seran (i:integer y s:string)
         
-        $sentencia->bind_param("issssssssss", $this->id, $this->nombre, $this->apellido,$this->cedula, $this->sexo,$this->direccion, $this->estado,$this->telefono, $this->fecha_nacimiento, $this->alojamiento, $this->habitacion);
+        $sentencia->bind_param("ssssssssss", $this->nombre, $this->apellido,$this->cedula, $this->sexo,$this->direccion, $this->estado,$this->telefono, $this->fecha_nacimiento, $this->alojamiento, $this->habitacion);
         $sentencia->execute(); // ejecuto el bind_param
     }
 
@@ -62,7 +60,7 @@ class VISITANTE extends PERSONA
         
     }
 
-    // aqui obtengo la id de un visitante mediante su cedula
+    // aqui obtengo la id el apellido y su nombre de un visitante mediante su cedula
     public static function obtener_id($cedula)
     {
         global $conexion;
@@ -71,6 +69,23 @@ class VISITANTE extends PERSONA
         $sentencia->execute();
         $resultado = $sentencia->get_result();
         return $resultado->fetch_object();
+        
+    }
+
+    // aqui obtengo una lista discriminados por su sexo
+    public static function obtener_sexo($sexo)
+    {
+        global $conexion;
+        $sentencia = $conexion->query("SELECT id_visitante, nombre, apellido, cedula, direccion, estado, telefono, fecha_nacimiento, alojamiento, habitacion FROM visitante WHERE sexo = '$sexo'");
+        return $sentencia->fetch_all(MYSQLI_ASSOC);
+        
+    }
+    // aqui obtengo una lista por estado
+    public static function obtener_estado($estado)
+    {
+        global $conexion;
+        $sentencia = $conexion->query("SELECT id_visitante, nombre, apellido, cedula, direccion, sexo, telefono, fecha_nacimiento, alojamiento, habitacion FROM visitante WHERE estado = '$estado'");
+        return $sentencia->fetch_all(MYSQLI_ASSOC);
         
     }
 

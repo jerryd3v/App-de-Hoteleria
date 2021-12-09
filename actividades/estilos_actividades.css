@@ -5,16 +5,22 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 body{
-    background:linear-gradient(to bottom,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url(../imagenes/fondo.png) center;
+    background:linear-gradient(to bottom,rgba(15, 15, 15, 0.568),rgba(0, 0, 0, 0.274)), url(../imagenes/fondo_actividad.jpg) center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
+}
+#form_visitante{
+    background:linear-gradient(to bottom,rgba(15, 15, 15, 0.568),rgba(0, 0, 0, 0.274)), url(../imagenes/fondo_activ_regitra.jpg) center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .sub_titulo{
     color: white;
     margin: 2em 0 0 2em;
     font-size: 2em;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 2px white;
 }
 .sub_titulo::first-letter{
     border-left: solid 4px white;
@@ -28,6 +34,7 @@ body{
     margin-top: 6em;
     box-sizing: border-box;
     flex-wrap: wrap;
+    padding-bottom: 4em;
 }
 .caja{
     background: #333A40;

@@ -14,7 +14,8 @@
 <body>
     <?php
     include_once "../php/visitante.php";
-    $visitantes = VISITANTE::obtener_todo();
+    $visitantes = VISITANTE::obtener_sexo($_GET['sexo']);
+    $conteo= 0;
     ?>
     <header>
         <div class="titulo">
@@ -27,6 +28,7 @@
                     <ul>
                         <li><a href="../habitaciones/index.php"><span>H</span>abitaciones</a></li>
                         <li><a href="../alojamientos/index.php">Alojamientos</a></li>
+                        <li><a href="index.php">Visitantes</a></li>
                         <li><a href="../asesores/index.php">Asesores</a></li>
                         <li><a href="../actividades/index.php">Actividades</a></li>
                         <li><a href="../realiza_actividad/index.php">Actividades Realizadas</a></li>
@@ -34,57 +36,19 @@
                     <p class="etiqueta_menu">by Jerry R.</p>
                 </nav>
             </div>
+            <a class="regresar_sexo" href="index.php">Regresar</a>
             <a class="agregar_visitante" href="formulario_visitante.php">Agregar</a>
-            <a class="ver_femeninas" href="ver_sexo.php?sexo=Femenino">Femeninas</a>
-            <a class="ver_masculinos" href="ver_sexo.php?sexo=Masculino">Masculinos</a>
         </div>
     </header>
     <main>
-        <h1 class="sub_titulo">Visitantes</h1>
-        <div class="contenedor_buscar">
-            <div class="caja_buscar_visitante">
-                <form action="verificar_visitante.php">
-                    <input type="text" name="cedula" placeholder="Buscar Visitante por cedula" required>
-                    <button type="submit">Buscar</button>
-                </form>
-            </div>
-            <div class="caja_buscar_estado">
-                <form action="ver_estado.php">
-                    <select name="estado" required>
-                        <option value="">Buscar Por estado</option>
-                        <option>Miranda</option>
-                        <option>Distrito Federal</option>
-                        <option>Anzoátegui</option>
-                        <option>Zulia</option>
-                        <option>Amazonas</option>
-                        <option>Bolívar</option>
-                        <option>Táchira</option>
-                        <option>Mérida</option>
-                        <option>Delta Amacuro</option>
-                        <option>Yaracuy</option>
-                        <option>Guarico</option>
-                        <option>Aragua</option>
-                        <option>Apure</option>
-                        <option>Carabobo</option>
-                        <option>Barinas</option>
-                        <option>Vargas</option>
-                        <option>Nueva Esparta</option>
-                        <option>Trujillo</option>
-                        <option>Cojedes</option>
-                        <option>Lara</option>
-                        <option>Monagas</option>
-                        <option>Portuguesa</option>
-                        <option>Falcón</option>
-                    </select>
-                    <button type="submit">Buscar</button>
-                </form>
-            </div>
-        </div>
+        <h1 class="sub_titulo">Visitantes Sexo <?php echo $_GET['sexo']?></h1>
+        <h2 class="titulo_sexo">Total del Sexo <?php echo $_GET['sexo'] ?>:<span class="sexo_<?php echo $_GET['sexo'] ?>"><?php echo " ".count($visitantes)?></span></h2> <!--Me permite Saber cual es la longitud del array-->
         <div class="contenedor">
             <div class="caja_tabla">
                 <table>
                     <thead>
                         <tr>
+                            <th>Cantidad</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Cedula</th>
@@ -97,22 +61,24 @@
                     </thead>
                     <tbody>
                         <?php foreach ($visitantes as $visitante) { ?>
+                            <?php $conteo++; ?> <!--Me premite llevar el conteo cada vez que recorre el array-->
                             <tr>
-                                <td><?php echo $visitante["nombre"] ?></td>
-                                <td><?php echo $visitante["apellido"] ?></td>
-                                <td><?php echo $visitante["cedula"] ?></td>
-                                <td><?php echo $visitante["telefono"] ?></td>
-                                <td><a href="../alojamientos/ver_alojamiento.php?nombre=<?php echo $visitante['alojamiento'] ?>"><?php echo $visitante["alojamiento"] ?></a></td>
-                                <td><a href="../habitaciones/ver_habitacion.php?id_habitacion=<?php echo $visitante['habitacion'] ?>"><?php echo $visitante["habitacion"] ?></td>
+                                <td><?php echo $conteo?></td>
+                                <td><?php echo $visitante['nombre']?></td>
+                                <td><?php echo $visitante['apellido'] ?></td>
+                                <td><?php echo $visitante['cedula'] ?></td>
+                                <td><?php echo $visitante['telefono'] ?></td>
+                                <td><a href="../alojamientos/ver_alojamiento.php?nombre=<?php echo $visitante['alojamiento']?>"><?php echo $visitante['alojamiento'] ?></a></td>
+                                <td><a href="../habitaciones/ver_habitacion.php?id_habitacion=<?php echo $visitante['habitacion']?>"><?php echo $visitante['habitacion'] ?></td>
                                 <td>
                                     <div class="botones">
                                         <div class="eliminar">
-                                            <a href="aviso_eliminar.php?id=<?php echo $visitante["id_visitante"] ?>&nombre=<?php echo $visitante["nombre"] ?>&apellido=<?php echo $visitante["apellido"] ?>">
+                                            <a href="aviso_eliminar.php?id=<?php echo $visitante['id_visitante'] ?>&nombre=<?php echo $visitante['nombre'] ?>&apellido=<?php echo $visitante['apellido'] ?>">
                                                 Eliminar
                                             </a>
                                         </div>
                                         <div class="ver_mas">
-                                            <a href="ver_visitante.php?id=<?php echo $visitante["id_visitante"] ?>">
+                                            <a href="ver_visitante.php?id=<?php echo $visitante['id_visitante']?>">
                                                 Ver más
                                             </a>
                                         </div>

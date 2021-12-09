@@ -5,7 +5,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 body{
-    background:linear-gradient(to bottom,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url(../imagenes/fondo.png) center;
+    background:linear-gradient(to bottom,rgba(15, 15, 15, 0.568),rgba(0, 0, 0, 0.274)), url(../imagenes/fondo_habita.jpg) center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -15,6 +15,7 @@ body{
     margin: 2em 0 0 2em;
     font-size: 2em;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 3px white;
 }
 .sub_titulo::first-letter{
     border-left: solid 4px white;
@@ -28,6 +29,7 @@ body{
     margin-top: 6em;
     box-sizing: border-box;
     flex-wrap: wrap;
+    padding-bottom: 6em;
 }
 .caja{
     background: #333A40;
@@ -58,7 +60,7 @@ body{
     font-weight: 400;
     margin-left: .8em;
     margin-top: .8em;
-    color: rgb(194, 129, 238); 
+    color: rgb(219, 200, 231); 
 }
 .caja p{
     margin: 1em 2em;
