@@ -5,7 +5,7 @@ en la cual podrán encontrar diferentes módulos, desde habitaciones hasta encar
 
 ¡Espero que la interfaz sea de su agrado!.
 
-# Observacion
+# Observación
 
 La aplicacion no fue realizada con estandares responsive, ya que solo se necesitaba
 
